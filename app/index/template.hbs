@@ -1,0 +1,78 @@
+<section id="welcome-header">
+  {{welcome-header}}
+</section>
+
+<section class="support-companies">
+  <img src="/assets/images/support/youtube.png" alt="YouTube" title="YouTube" />
+  <img src="/assets/images/support/twitch.png" alt="Twitch" title="Twitch" />
+  <img src="/assets/images/support/hitbox.png" alt="Hitbox" title="Hitbox" />
+  <img src="/assets/images/support/dailymotion.png" alt="Dailymotion" title="Dailymotion" />
+  <img src="/assets/images/support/huamao.png" alt="HuaMao" />
+  <img src="/assets/images/support/douyu.png" alt="Douyu" />
+  <img src="/assets/images/support/azubu.png" alt="Azubu" title="Azubu"/>
+</section>
+
+<section id="benefits">
+  <h3>How it works<span class="title-dot"></span></h3>
+
+  <div class="benefits-items">
+    <div class="benefits-item">
+      <img src="/assets/images/benefits/copy_link.png"/>
+      <h4>COPY LINK <span class="title-dot"></span></h4>
+      <div class="benefits-item__text">-- text about which services we support --
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et  nostrud exercitation ullamco laboris nisi.</div>
+    </div>
+
+    <div class="benefits-item">
+      <img src="/assets/images/benefits/setup_in_one_click.png"/>
+      <h4>COPY LINK <span class="title-dot"></span></h4>
+      <div class="benefits-item__text">-- text about how easy to create room --
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et  nostrud exercitation ullamco laboris nisi.</div>
+    </div>
+
+    <div class="benefits-item">
+      <img src="/assets/images/benefits/get_pleasured.png"/>
+      <h4>COPY LINK <span class="title-dot"></span></h4>
+      <div class="benefits-item__text">-- text about our feautres like no spam, own chat and voice-video talks ---
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et  nostrud exercitation ullamco laboris nisi.</div>
+    </div>
+  </div>
+
+</section>
+
+<section id="subscribe">
+  <h3>Get pleasure from watching right now<span class="title-dot"></span></h3>
+
+  {{welcome-email-subscribe someAction=(action (route-action 'subscribe'))}}
+</section>
+
+<footer class="mdl-mini-footer">
+  <div class="mdl-mini-footer__left-section">
+    <div class="mdl-logo">
+      <img src="/assets/images/roomit_logo_small_2.png" alt="">
+      <div class="copyright">
+        © Roomit 2015
+      </div>
+    </div>
+  </div>
+  <ul class="mdl-mini-footer__link-list">
+    <li>
+      {{#scroll-to href="#welcome-header"}}
+        TO TOP
+      {{/scroll-to}}
+    </li>
+    <li>
+      {{#scroll-to href="#benefits"}}
+        FEATURES
+      {{/scroll-to}}
+    </li>
+  </ul>
+  <div class="mdl-mini-footer__right-section">
+    <a href="#">{{social-button type="fb"}}</a>
+    <a href="#">{{social-button type="gplus"}}</a>
+    <a href="#">{{social-button type="twitter"}}</a>
+    <a href="#">{{social-button type="youtube"}}</a>
+  </div>
+</footer>
+
+{{outlet}}

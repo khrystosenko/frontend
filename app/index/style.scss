@@ -1,0 +1,162 @@
+.support-companies {
+  display: flex;
+  justify-content: center;
+  // padding: 37px 0;
+  flex-wrap: wrap;
+
+  & > img {
+    margin: 37px 0;
+
+    &:not(:last-child) {
+      margin-right: 65px;
+    }
+  }
+}
+
+#benefits {
+  padding: 80px 0 84px;
+  text-align: center;
+  color: whitesmoke;
+  background-color: #333;
+
+  .benefits-items {
+    display: flex;
+    justify-content: center;
+    margin-top: 44px;
+  }
+
+  .benefits-item {
+    width: 295px;
+
+    &__text {
+      // Text style for "-- text about"
+      opacity: 0.87;
+      color: white;
+    }
+
+    &:not(:last-child) {
+      margin-right: 55px;
+    }
+  }
+}
+
+#subscribe {
+  padding: 81px 0 96px;
+  text-align: center;
+  color: whitesmoke;
+  background: url(/assets/images/bic.png) center / cover;
+
+  .mdl-textfield {
+    width: 601px;
+  }
+}
+
+footer.mdl-mini-footer {
+  background-color: #212121;
+  padding: 24px 184px;
+  position: relative;
+
+  .mdl-logo {
+    .copyright {
+      position: absolute;
+      bottom: 12px;
+      font-size: 10px;
+      line-height: 10px;
+      color: #757575;
+    }
+  }
+
+  .mdl-mini-footer__link-list {
+    a {
+      opacity: 0.6;
+      text-transform: uppercase;
+      color: white;
+      font-weight: 500;
+
+      &:hover, &:hover, /*&.active*/ {
+        opacity: 1;
+      }
+    }
+  }
+
+  .mdl-mini-footer__right-section {
+    padding-top: 7px;
+
+    a {
+      display: inline-block;
+
+      &:not(:last-child) {
+        margin-right: 7px;
+      }
+    }
+  }
+
+}
+
+.mdl-snackbar {
+  position: fixed;
+  // bottom: 0;
+  bottom: 81px;
+  left: 50%;
+  cursor: default;
+  // background-color: $snackbar-background-color;
+  background-color: #ff5722;
+  z-index: 3;
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  font-family: $preferred_font;
+  will-change: transform;
+  transform: translate(-50%, 80px);
+  transition: transform 0.25s $animation-curve-fast-out-linear-in;
+  pointer-events: none;
+  @media(max-width: $snackbar-tablet-breakpoint - 1) {
+    width: 100%;
+    left: 0;
+    min-height: 48px;
+    max-height: 80px;
+  }
+  @media(min-width: $snackbar-tablet-breakpoint) {
+    min-width: 288px;
+    max-width: 568px;
+    border-radius: 2px;
+  }
+  &--active {
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+    transition: transform 0.25s $animation-curve-linear-out-slow-in;
+  }
+
+  &__text {
+    padding: 14px 12px 14px 24px;
+    vertical-align: middle;
+    color: white;
+    float: left;
+  }
+
+  &__action {
+    background: transparent;
+    border: none;
+    color: $snackbar-action-color;
+    float: right;
+    text-transform: uppercase;
+    padding: 14px 24px 14px 12px;
+    @include typo-button();
+    overflow: hidden;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    align-self: center;
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:not([aria-hidden]) {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+}

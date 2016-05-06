@@ -1,0 +1,8 @@
+<form {{action "submit" email on="submit"}}>
+  <div>
+    {{mdl-textfield label='Email' type="email" name="email" value=email errorMessage="Please use valid email address"}}
+  </div>
+  <div>
+    {{#mdl-button isRaised=true type="submit" disabled=hasNoEmail}}Subscribe{{/mdl-button}}
+  </div>
+</form>
