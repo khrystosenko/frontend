@@ -1,0 +1,12 @@
+<div class="roomit-app-container">
+  {{outlet}}
+
+  <div class="mdl-snackbar__container">
+    {{#each flashMessages.queue as |flash|}}
+      {{#flash-message classNames="mdl-js-snackbar mdl-snackbar mdl-snackbar--active" flash=flash as |component flash|}}
+        <div class="mdl-snackbar__text">{{flash.message}}</div>
+        <button class="mdl-snackbar__action" type="button">Close</button>
+      {{/flash-message}}
+    {{/each}}
+  </div>
+</div>

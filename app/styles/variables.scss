@@ -4,16 +4,20 @@ $fontFamilyRegular: Roboto-Regular;
 $fontFamilyMedium: Roboto-Medium;
 $fontFamilyBold: Roboto-Bold;
 
-$button-primary-color-alt: #ff5722;
+$success-color: rgb(139, 195, 74); // $palette-light-green-500
+$error-color: rgb(244, 67, 54); // $palette-red-500
+
+$button-primary-color: rgb(255, 87, 34); // $palette-deep-orange-500
+$button-secondary-color: #fff;
 
 $input-text-bottom-border-color: #7c7b7b;
 $input-text-label-color: rgba(256, 256, 256, 0.54);
-$input-text-highlight-color: #ff5722;
-$input-text-error-color: #f44336;
+$input-text-highlight-color: rgb(255, 87, 34); // $palette-deep-orange-500
+$input-text-error-color: $error-color;
 
 /* SNACKBAR */
 
 // Hard coded since the color is not present in any palette.
-$snackbar-background-color: #323232;
+$snackbar-background-color: rgb(255, 87, 34); // $palette-deep-orange-500
 $snackbar-tablet-breakpoint: 480px;
-$snackbar-action-color: #ff4081;
+$snackbar-action-color: rgb(255, 87, 34); // $palette-deep-orange-500

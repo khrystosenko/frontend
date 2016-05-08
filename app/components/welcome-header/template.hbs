@@ -1,27 +1,26 @@
-<header class="mdl-layout__header mdl-layout__header--transparent is-casting-shadow">
-  <div class="mdl-layout__header-row">
-    <span class="mdl-layout-title"></span>
-    <div class="mdl-layout-spacer"></div>
-    <nav class="mdl-navigation mdl-layout--large-screen-only">
-      {{#scroll-to href="#benefits" class="mdl-navigation__link"}}
-        How it works
-      {{/scroll-to}}
-    </nav>
-  </div>
-</header>
+<div class="mdl-layout__header-row">
+  <span class="mdl-layout-title"></span>
+  <div class="mdl-layout-spacer"></div>
+  <nav class="mdl-navigation mdl-layout--large-screen-only">
+    {{#scroll-to href="#benefits" class="mdl-navigation__link"}}
+      How it works
+    {{/scroll-to}}
+  </nav>
+</div>
 <div class="welcome-content">
   <h3>
     Watching should make pleasure<span class="title-dot"></span>
     <h4>We understand you</h4>
   </h3>
   {{#scroll-to href="#subscribe"}}
-    {{#mdl-button isRaised=true}}
+    {{#mdl-button isRaised=true isColored=false}}
         Subscribe
     {{/mdl-button}}
   {{/scroll-to}}
   <div class="welcome-learn-more">
     {{#scroll-to href="#benefits"}}
-      LEARN MORE
+      <div>LEARN MORE</div>
+      <div><i class="material-icons">keyboard_arrow_down</i></div>
     {{/scroll-to}}
   </div>
 </div>

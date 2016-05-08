@@ -15,9 +15,17 @@ module.exports = function(environment) {
     sassOptions: {
       includePaths: ['bower_components/material-design-lite/src']
     },
+    flashMessageDefaults: {
+      extendedTimeout: 1000
+    },
+    contentSecurityPolicy: {
+      'connect-src': "'self' 'localhost:4200' 'localhost:4200' 'http://api.roomit.tv'",
+    },
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+      API_HOST: 'http://api.roomit.tv',
+      API_NAMESPACE: ''
     }
   };
 

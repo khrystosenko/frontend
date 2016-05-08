@@ -1,6 +1,7 @@
-import Ember from 'ember';
 import AjaxService from 'ember-ajax/services/ajax';
+import config from 'roomit-frontend/config/environment';
 
 export default AjaxService.extend({
-  host: 'http://api.roomit.tv'
+  namespace: config.APP.API_NAMESPACE,
+  host: config.APP.API_HOST,
 });

@@ -1,7 +1,6 @@
 .support-companies {
   display: flex;
   justify-content: center;
-  // padding: 37px 0;
   flex-wrap: wrap;
 
   & > img {
@@ -9,6 +8,7 @@
 
     &:not(:last-child) {
       margin-right: 65px;
+
     }
   }
 }
@@ -22,11 +22,20 @@
   .benefits-items {
     display: flex;
     justify-content: center;
-    margin-top: 44px;
+    margin-top: 24px;
+    flex-wrap: wrap;
+    // justify-content: space-around;
   }
 
   .benefits-item {
     width: 295px;
+    margin-top: 20px;
+
+    & > img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+    }
 
     &__text {
       // Text style for "-- text about"
@@ -45,10 +54,6 @@
   text-align: center;
   color: whitesmoke;
   background: url(/assets/images/bic.png) center / cover;
-
-  .mdl-textfield {
-    width: 601px;
-  }
 }
 
 footer.mdl-mini-footer {
@@ -57,9 +62,11 @@ footer.mdl-mini-footer {
   position: relative;
 
   .mdl-logo {
+    margin-bottom: 16px;
+    position: relative;
     .copyright {
       position: absolute;
-      bottom: 12px;
+      bottom: -12px;
       font-size: 10px;
       line-height: 10px;
       color: #757575;
@@ -67,20 +74,25 @@ footer.mdl-mini-footer {
   }
 
   .mdl-mini-footer__link-list {
-    a {
-      opacity: 0.6;
-      text-transform: uppercase;
-      color: white;
-      font-weight: 500;
+    margin-top: 5px;
 
-      &:hover, &:hover, /*&.active*/ {
-        opacity: 1;
+    & li {
+      line-height: $footer-btn-size;
+    }
+    a {
+      text-transform: uppercase;
+      color: #757575;
+      // font-family: $fontFamilyMedium;
+      // font-weight: 500;
+
+      &:focus, &:hover, /*&.active*/ {
+        color: white;
       }
     }
   }
 
   .mdl-mini-footer__right-section {
-    padding-top: 7px;
+    padding-top: 14px;
 
     a {
       display: inline-block;
@@ -93,70 +105,44 @@ footer.mdl-mini-footer {
 
 }
 
-.mdl-snackbar {
-  position: fixed;
-  // bottom: 0;
-  bottom: 81px;
-  left: 50%;
-  cursor: default;
-  // background-color: $snackbar-background-color;
-  background-color: #ff5722;
-  z-index: 3;
-  display: block;
-  display: flex;
-  justify-content: space-between;
-  font-family: $preferred_font;
-  will-change: transform;
-  transform: translate(-50%, 80px);
-  transition: transform 0.25s $animation-curve-fast-out-linear-in;
-  pointer-events: none;
-  @media(max-width: $snackbar-tablet-breakpoint - 1) {
-    width: 100%;
-    left: 0;
-    min-height: 48px;
-    max-height: 80px;
-  }
-  @media(min-width: $snackbar-tablet-breakpoint) {
-    min-width: 288px;
-    max-width: 568px;
-    border-radius: 2px;
-  }
-  &--active {
-    transform: translate(-50%, 0);
-    pointer-events: auto;
-    transition: transform 0.25s $animation-curve-linear-out-slow-in;
-  }
-
-  &__text {
-    padding: 14px 12px 14px 24px;
-    vertical-align: middle;
-    color: white;
-    float: left;
-  }
-
-  &__action {
-    background: transparent;
-    border: none;
-    color: $snackbar-action-color;
-    float: right;
-    text-transform: uppercase;
-    padding: 14px 24px 14px 12px;
-    @include typo-button();
-    overflow: hidden;
-    outline: none;
-    opacity: 0;
-    pointer-events: none;
-    cursor: pointer;
-    text-decoration: none;
-    text-align: center;
-    align-self: center;
-
-    &::-moz-focus-inner {
-      border: 0;
+@media screen and (max-width: $layout-screen-size-threshold) {
+  .support-companies {
+    & > img:not(:last-child) {
+      margin-right: 31px;
     }
-    &:not([aria-hidden]) {
-      opacity: 1;
-      pointer-events: auto;
+  }
+  #benefits {
+    .benefits-items {
+      justify-content: space-around;
     }
+
+    .benefits-item:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+
+  footer.mdl-mini-footer {
+    padding: 24px 0;
+    justify-content: space-around;
+  }
+}
+
+// @media screen and (max-width: $grid-desktop-breakpoint) {
+//   footer.mdl-mini-footer {
+//     padding: 24px 0;
+//     justify-content: space-around;
+//   }
+// }
+
+@media screen and (max-width: $grid-tablet-breakpoint) {
+  .support-companies {
+    justify-content: space-around;
+
+    & > img:not(:last-child) {
+      margin-right: 0;
+    }
+  }
+  footer.mdl-mini-footer > .mdl-mini-footer__link-list {
+    display: none;
   }
 }

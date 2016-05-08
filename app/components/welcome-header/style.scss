@@ -1,11 +1,7 @@
 & {
   background: url('/assets/images/header1.png') center / cover;
-  height: 852px;
+  // height: 852px;
   position: relative;
-  // .layout-transparent {
-  //   background: url('/assets/images/header1.png') center / cover;
-  //   height: 852px;
-  // }
   .mdl-layout-title {
     background: url('/assets/images/roomit_logo.png') center / cover;
     height: 32px;
@@ -18,7 +14,7 @@
     color: white;
     font-weight: 500;
 
-    &:hover, &:hover, /*&.active*/ {
+    &:focus, &:hover, /*&.active*/ {
       opacity: 1;
     }
   }
@@ -35,6 +31,7 @@
       margin: 0;
       font-size: 72px;
       line-height: 72px;
+      text-align: center;
 
       // Text style for "Watching shoul"
       color: white;
@@ -56,10 +53,80 @@
 
       a {
         // Text style for "learn more"
+        display: block;
         opacity: 0.25;
         color: whitesmoke;
         font-size: 12px;
         text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: $layout-screen-size-threshold) {
+    & {
+      display: block;
+
+      .welcome-content {
+        h3 {
+          font-size: 54px;
+        }
+        h4 {
+          font-size: 14px;
+        }
+      }
+
+      .welcome-learn-more > a {
+        font-size: 10px;
+      }
+    }
+  }
+
+  @media screen and (max-width: $grid-desktop-breakpoint) {
+    & {
+      display: block;
+
+      .welcome-content {
+        h4 {
+          text-align: center;
+        }
+      }
+
+      .welcome-learn-more > a {
+        font-size: 10px;
+      }
+
+      .welcome-content {
+        margin-top: 50%;
+      }
+    }
+  }
+
+  @media screen and (max-width: $grid-tablet-breakpoint) {
+    & {
+      .mdl-layout__header-row {
+        padding: 0;
+
+        .mdl-layout-title {
+          margin: 0 auto;
+        }
+        .mdl-navigation.mdl-layout--large-screen-only,
+        .mdl-layout-spacer {
+          display: none;
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 375px) {
+    & {
+      .welcome-content {
+        margin-top: 20%;
       }
     }
   }

@@ -21,12 +21,109 @@ body {
 // Text style for "."
 .title-dot::after {
   content: '.';
-  color: #ff5722;
+  color: rgb(255, 87, 34); // $palette-deep-orange-500
 }
 
-.mdl-textfield {
+.mdl-textfield > .mdl-textfield__input {
+  border-width: 2px;
+}
 
-  &.is-invalid .mdl-textfield__input {
-    border-width: 2px;
+.form-error-messages {
+  padding-top: 15px;
+  color: $error-color;
+}
+
+.mdl-snackbar__container {
+  position: fixed;
+  z-index: 5000;
+  bottom: 0;
+  pointer-events: none;
+  transform: translate(-50%, 0);
+  left: 50%;
+  @media(max-width: $snackbar-tablet-breakpoint - 1) {
+    width: 100%;
+    left: 0;
+    transform: translate(0, 0);
+  }
+}
+
+.mdl-snackbar {
+  position: relative;
+  cursor: default;
+  background-color: $snackbar-background-color;
+  z-index: 3;
+  display: block;
+  display: flex;
+  justify-content: space-between;
+  font-family: $preferred_font;
+  opacity: 1;
+  will-change: opacity;
+  transition: opacity 1s $animation-curve-fast-out-linear-in;
+  pointer-events: none;
+  @media(max-width: $snackbar-tablet-breakpoint - 1) {
+    width: 100%;
+    min-height: 48px;
+    max-height: 80px;
+  }
+  @media(min-width: $snackbar-tablet-breakpoint) {
+    min-width: 288px;
+    max-width: 568px;
+    border-radius: 2px;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  // &--active {
+  // }
+
+  &.exiting {
+    opacity: 0;
+    z-index: 2;
+  }
+
+  &__text {
+    padding: 14px 12px 14px 24px;
+    vertical-align: middle;
+    color: white;
+    float: left;
+  }
+
+  &__action {
+    background: transparent;
+    border: none;
+    color: $snackbar-action-color;
+    color: #f5f5f5;
+    float: right;
+    text-transform: uppercase;
+    padding: 14px 24px 14px 12px;
+    @include typo-button();
+    overflow: hidden;
+    outline: none;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    align-self: center;
+
+    &::-moz-focus-inner {
+      border: 0;
+    }
+    &:not([aria-hidden]) {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+
+  &.alert-success {
+    background: $success-color;
+    color: #fff;
+  }
+
+  &.alert-danger {
+    background: $error-color;
+    color: #fff;
   }
 }
