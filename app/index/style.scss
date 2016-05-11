@@ -14,7 +14,7 @@
 }
 
 #benefits {
-  padding: 80px 0 84px;
+  padding: 80px 0 105px;
   text-align: center;
   color: whitesmoke;
   background-color: #333;
@@ -24,7 +24,6 @@
     justify-content: center;
     margin-top: 24px;
     flex-wrap: wrap;
-    // justify-content: space-around;
   }
 
   .benefits-item {
@@ -127,12 +126,11 @@ footer.mdl-mini-footer {
   }
 }
 
-// @media screen and (max-width: $grid-desktop-breakpoint) {
-//   footer.mdl-mini-footer {
-//     padding: 24px 0;
-//     justify-content: space-around;
-//   }
-// }
+@media screen and (max-width: $grid-desktop-breakpoint) {
+  #benefits {
+    padding: 20px 0 45px;
+  }
+}
 
 @media screen and (max-width: $grid-tablet-breakpoint) {
   .support-companies {
