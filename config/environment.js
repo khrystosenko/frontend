@@ -12,9 +12,6 @@ module.exports = function(environment) {
         // e.g. 'with-controller': true
       }
     },
-    sassOptions: {
-      includePaths: ['bower_components/material-design-lite/src']
-    },
     flashMessageDefaults: {
       extendedTimeout: 1000
     },
