@@ -10,10 +10,6 @@
     .mdl-textfield {
       width: 100%;
       max-width: 601px;
-
-      & .mdl-textfield__error {
-        visibility: hidden;
-      }
     }
 
     &.submitted-successfully {
@@ -26,19 +22,6 @@
 
         & .mdl-textfield__input {
           border-color: $success-color;
-        }
-      }
-    }
-
-    &.has-submit-failed {
-      .mdl-textfield {
-
-        & .mdl-textfield__input {
-          border-color: $error-color;
-        }
-
-        & .mdl-textfield__error {
-          visibility: visible;
         }
       }
     }

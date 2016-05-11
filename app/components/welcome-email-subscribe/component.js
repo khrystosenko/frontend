@@ -12,21 +12,18 @@ const Validations = buildValidations({
 });
 
 export default Ember.Component.extend(Validations, {
-  flashMessages: Ember.inject.service(),
   email: '',
   isDisabled: false,
   submittedSuccessfully: false,
-  errorMessages: Ember.computed('validations.messages', function() {
-    return this.get('validations.messages');
-  }),
   actions: {
     submit(email) {
-      const flashMessages = this.get('flashMessages');
       const isInvalid = this.get('validations.isInvalid');
+      const $textfield = this.$('.mdl-textfield');
+
+      this.set('submittedSuccessfully', false);
 
       if (isInvalid) {
-        this.set('hasSubmitFailed', true);
-        this.set('submittedSuccessfully', false);
+        $textfield.addClass('is-invalid');
 
         return false;
       }
@@ -35,17 +32,14 @@ export default Ember.Component.extend(Validations, {
 
       this.get('someAction')(email).then(() =>  {
         this.set('email', null);
-        this.set('isDisabled', false);
         this.set('submittedSuccessfully', true);
-        this.set('hasSubmitFailed', false);
+        $textfield.removeClass('is-dirty is-focused');
+        this.$('.mdl-textfield__input').blur();
       })
-      .catch((err) => {
-        flashMessages.clearMessages();
-        flashMessages.danger('Sorry, something went wrong!')
-        this.set('isDisabled', false);
-        this.set('submittedSuccessfully', false);
-        this.set('hasSubmitFailed', true);
-      });
+      .catch(({message = 'Something went wrong'}) => {
+        $textfield.addClass('is-invalid');
+      })
+      .finally(() => this.set('isDisabled', false));
     }
   }
 });
