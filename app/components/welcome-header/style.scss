@@ -1,7 +1,9 @@
 & {
   background: url('/assets/images/header1.png') center / cover;
-  // height: 852px;
+  height: 100vh;
+  justify-content: space-between;
   position: relative;
+
   .mdl-layout-title {
     background: url('/assets/images/roomit_logo.png') center / cover;
     height: 32px;
@@ -19,9 +21,7 @@
     }
   }
 
-  .welcome-content {
-    margin-top: 313px;
-    height: 475px;
+  .welcome-title {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,32 +47,28 @@
       text-transform: uppercase;
     }
 
-    .welcome-learn-more {
-      margin-top: auto;
-      margin-bottom: 25px;
+  }
 
-      a {
-        // Text style for "learn more"
-        display: block;
-        opacity: 0.25;
-        color: whitesmoke;
-        font-size: 12px;
-        text-transform: uppercase;
-        text-align: center;
-        text-decoration: none;
+  a.welcome-learn-more {
+    // Text style for "learn more"
+    display: block;
+    color: #b5b5b5;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
 
-        &:hover {
-          opacity: 1;
-        }
-      }
+    &:hover {
+      color: white;
+      background: rgba(0, 0, 0, 0.2);
     }
   }
 
   @media screen and (max-width: $layout-screen-size-threshold) {
     & {
-      display: block;
+      display: flex;
 
-      .welcome-content {
+      .welcome-title {
         h3 {
           font-size: 54px;
         }
@@ -89,9 +85,7 @@
 
   @media screen and (max-width: $grid-desktop-breakpoint) {
     & {
-      display: block;
-
-      .welcome-content {
+      .welcome-title {
         h4 {
           text-align: center;
         }
@@ -99,10 +93,6 @@
 
       .welcome-learn-more > a {
         font-size: 10px;
-      }
-
-      .welcome-content {
-        margin-top: 50%;
       }
     }
   }
@@ -119,14 +109,6 @@
         .mdl-layout-spacer {
           display: none;
         }
-      }
-    }
-  }
-
-  @media screen and (max-width: 375px) {
-    & {
-      .welcome-content {
-        margin-top: 20%;
       }
     }
   }

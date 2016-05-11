@@ -7,20 +7,19 @@
     {{/scroll-to}}
   </nav>
 </div>
-<div class="welcome-content">
+
+<div class="welcome-title">
   <h3>
     Watching should make pleasure<span class="title-dot"></span>
     <h4>We understand you</h4>
   </h3>
-  {{#scroll-to href="#subscribe"}}
+  {{#scroll-to href="#benefits"}}
     {{#mdl-button isRaised=true isColored=false}}
-        Subscribe
+        Learn More
     {{/mdl-button}}
   {{/scroll-to}}
-  <div class="welcome-learn-more">
-    {{#scroll-to href="#benefits"}}
-      <div>LEARN MORE</div>
-      <div><i class="material-icons">keyboard_arrow_down</i></div>
-    {{/scroll-to}}
-  </div>
 </div>
+
+{{#scroll-to href="#benefits" classNames="welcome-learn-more"}}
+  LEARN MORE<br/><i class="material-icons">keyboard_arrow_down</i>
+{{/scroll-to}}
