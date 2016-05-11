@@ -36,7 +36,7 @@ export default Ember.Component.extend(Validations, {
         $textfield.removeClass('is-dirty is-focused');
         this.$('.mdl-textfield__input').blur();
       })
-      .catch(({message = 'Something went wrong'}) => {
+      .catch(() => {
         $textfield.addClass('is-invalid');
       })
       .finally(() => this.set('isDisabled', false));
