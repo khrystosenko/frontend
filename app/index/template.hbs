@@ -13,10 +13,26 @@
       </section>
 
       <section id="benefits">
-        <h3>How it works<span class="title-dot"></span></h3>
+        <h3>{{t "welcome.howItWorks.title"}}<span class="title-dot"></span></h3>
 
         <div class="benefits-items">
-          <div class="mdl-grid">
+
+          {{#each model.features as |feature|}}
+            <div class="mdl-grid">
+              <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                <div class="benefits-item__image">
+                  <img src="{{feature.image_url}}"/>
+                </div>
+              </div>
+              <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet">
+                <div class="benefits-item__description">
+                  <h4>{{feature.title}}</h4>
+                  <div class="benefits-item__text">{{feature.description}}</div>
+                </div>
+              </div>
+            </div>
+          {{/each}}
+          {{!--<div class="mdl-grid">
             <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
               <div class="benefits-item__image">
                 <img src="/assets/images/benefits/link.png"/>
@@ -54,7 +70,7 @@
                 <div class="benefits-item__text">Your room - finally you can create personal room with especially created chat that will change the way you watch Dota 2.</div>
               </div>
             </div>
-          </div>
+          </div>--}}
         </div>
       </section>
 
@@ -84,9 +100,9 @@
       </section>
 
       <section id="subscribe">
-        <h3>Like the idea? Be first to know the exact moment we launch<span class="title-dot"></span></h3>
+        <h3>{{t "welcome.likeTheIdea"}}<span class="title-dot"></span></h3>
 
-        {{welcome-email-subscribe someAction=(action (route-action 'subscribe'))}}
+        {{welcome-email-subscribe subscribe=(action (route-action 'subscribe'))}}
       </section>
     </div>
     <footer class="mdl-mini-footer">
@@ -101,12 +117,12 @@
       <ul class="mdl-mini-footer__link-list">
         <li>
           {{#scroll-to href="header.mdl-layout__header"}}
-            TO TOP
+            {{t "welcome.toTop"}}
           {{/scroll-to}}
         </li>
         <li>
           {{#scroll-to href="#benefits"}}
-            FEATURES
+            {{t "welcome.features"}}
           {{/scroll-to}}
         </li>
       </ul>

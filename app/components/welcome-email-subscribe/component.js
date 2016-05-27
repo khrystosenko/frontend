@@ -30,7 +30,7 @@ export default Ember.Component.extend(Validations, {
 
       this.set('isDisabled', true);
 
-      this.get('someAction')(email).then(() =>  {
+      this.get('subscribe')(email).then(() =>  {
         this.set('email', null);
         this.set('submittedSuccessfully', true);
         $textfield.removeClass('is-dirty is-focused');

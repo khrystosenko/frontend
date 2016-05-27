@@ -15,6 +15,9 @@ module.exports = function(environment) {
     flashMessageDefaults: {
       extendedTimeout: 1000
     },
+    i18n: {
+      defaultLocale: 'en'
+    },
     contentSecurityPolicy: {
       'connect-src': "'self' 'localhost:4200' 'localhost:4200' 'http://api.roomit.tv'",
     },

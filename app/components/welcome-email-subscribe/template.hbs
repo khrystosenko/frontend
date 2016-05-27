@@ -1,11 +1,11 @@
 <form {{action "submit" email on="submit"}} class="{{if submittedSuccessfully "submitted-successfully"}}">
   <div class="successful-message">
-    You subscribed successfully!
+    {{t "welcome.successfulSubscriptionMessage"}}
   </div>
   <div>
-    {{mdl-textfield label='Email' type="email" name="email" value=email errorMessage="Please use valid email address"}}
+    {{mdl-textfield label=(t "form.email.label") type="email" name="email" value=email errorMessage=(t "form.email.errorMessage")}}
   </div>
   <div>
-    {{#mdl-button isRaised=true isColored=false type="submit" disabled=isDisabled}}Subscribe{{/mdl-button}}
+    {{#mdl-button isRaised=true isColored=false type="submit" disabled=isDisabled}}{{t "welcome.subscribe"}}{{/mdl-button}}
   </div>
 </form>

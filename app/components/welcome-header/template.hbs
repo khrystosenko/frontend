@@ -5,21 +5,26 @@
     {{!--{{#scroll-to href="#benefits" class="mdl-navigation__link"}}
       How it works
     {{/scroll-to}}--}}
+    <div class="welcome-language-links">
+      {{#each locales as |locale|}}
+        {{#mdl-button click=(route-action 'setLocale' locale.id) classNames="mdl-navigation__link" isRaised=locale.isActive isColored=false}} {{locale.text}} {{/mdl-button}}
+      {{/each}}
+    </div>
   </nav>
 </div>
 
 <div class="welcome-title">
   <h3>
-    Watching should make pleasure<span class="title-dot"></span>
-    <h4>We understand you</h4>
+    {{t "welcome.header.title"}}<span class="title-dot"></span>
+    <h4>{{t "welcome.header.subtitle"}}</h4>
   </h3>
   {{#scroll-to href="#benefits"}}
     {{#mdl-button isRaised=true isColored=false}}
-        How it works
+        {{t "welcome.howItWorks.title"}}
     {{/mdl-button}}
   {{/scroll-to}}
 </div>
 
 {{#scroll-to href="#benefits" classNames="welcome-learn-more"}}
-  LEARN MORE<br/><i class="material-icons">keyboard_arrow_down</i>
+  {{t "welcome.header.learnMore"}}<br/><i class="material-icons">keyboard_arrow_down</i>
 {{/scroll-to}}
