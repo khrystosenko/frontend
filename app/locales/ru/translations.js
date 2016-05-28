@@ -1,17 +1,7 @@
 export default {
-  // "some.translation.key": "Text for some.translation.key",
-  //
-  // "a": {
-  //   "nested": {
-  //     "key": "Text for a.nested.key"
-  //   }
-  // },
-  //
-  // "key.with.interpolation": "Text with {{anInterpolation}}"
-  // "welcome.howItWorks.title": "Как Это Работает",
   "welcome": {
     "header": {
-      "title": "Просмотр должен приносить удовольствие",
+      "title": "Просмотр должен приносить радость",
       "subtitle": "Мы вас понимаем",
       "learnMore": "Узнать больше",
     },
@@ -24,7 +14,7 @@ export default {
   },
   "language-select.language": {
     "en": "english",
-    "ru": "russian"
+    "ru": "русский"
   },
   "form": {
     "email": {

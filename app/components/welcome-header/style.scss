@@ -123,10 +123,6 @@
         padding: 0;
         height: 120px;
 
-        // .mdl-layout-title {
-        //   margin: 0 auto;
-        // }
-
         .mdl-navigation.mdl-layout--large-screen-only {
           display: block;
           line-height: 1;
@@ -134,6 +130,12 @@
         }
 
         .mdl-layout-spacer {
+          display: none;
+        }
+      }
+
+      .welcome-title {
+        a {
           display: none;
         }
       }

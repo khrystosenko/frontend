@@ -1,16 +1,4 @@
 export default {
-  // "some.translation.key": "Text for some.translation.key",
-  //
-  // "a": {
-  //   "nested": {
-  //     "key": "Text for a.nested.key"
-  //   }
-  // },
-  //
-  // "key.with.interpolation": "Text with {{anInterpolation}}"
-  // "welcome.howItWorks.title": "How It Works",
-  // "language-select.language.en": "en",
-  // "language-select.language.ru": "ru",
   "welcome": {
     "header": {
       "title": "Watching should make pleasure",
@@ -26,7 +14,7 @@ export default {
   },
   "language-select.language": {
     "en": "english",
-    "ru": "russian"
+    "ru": "русский"
   },
   "form": {
     "email": {
