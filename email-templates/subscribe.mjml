@@ -1,0 +1,44 @@
+<mjml>
+  <mj-body>
+    <mj-container>
+      <mj-section full-width="full-width" background-color="#2a2a2a">
+        <mj-column>
+
+          <mj-image width="100" src="https://s3.eu-central-1.amazonaws.com/roomit.tv-mailchimp/images/roomit_logo.png"></mj-image>
+
+          <mj-spacer height="10px" />
+
+          <mj-divider border-color="#FFF" border-width="1px"></mj-divider>
+
+          <mj-text color="#FFF" font-family="Helvetica" align="center">
+            <h1 style="font-size:48px; line-height:48px" >
+              Thank you for subscription.
+            </h1>
+          </mj-text>
+
+          <mj-text color="#FFF" font-family="Helvetica" align="center" font-size="16px">
+            You are the best!
+          </mj-text>
+
+          <mj-spacer height="20px" />
+
+          <mj-button href="https://www.roomit.tv" background-color="#ff5722" font-family="Helvetica" font-size="16px" color="white">
+            Back to website
+          </mj-button>
+        </mj-column>
+      </mj-section>
+
+      <mj-section full-width="full-width">
+        <mj-column>
+          <mj-image src="https://s3.eu-central-1.amazonaws.com/roomit.tv-mailchimp/images/Golden_Doge_WOW.png"></mj-image>
+          <mj-spacer height="20px" />
+          <mj-social display="facebook:url twitter:url google:url youtube" google-icon-color="#282928" facebook-icon-color="#282928" twitter-icon-color="#282928" youtube-icon-color="#FFF" youtube-icon="https://www.youtube.com/yt/brand/media/image/YouTube-icon-dark.png" youtube-content="Watch" facebook-href="https://www.facebook.com/roomitTV/" twitter-href="https://twitter.com/roomitTV" google-href="https://plus.google.com/+RoomitTv/posts" youtube-href="https://www.youtube.com/c/roomitTV"/>
+          <mj-spacer height="20px" />
+          <mj-text color="#2A2A2A" font-family="Helvetica" align="center" font-size="16px">
+            Roomit.tv team
+          </mj-text>
+        </mj-column>
+      </mj-section>
+    </mj-container>
+  </mj-body>
+</mjml>
