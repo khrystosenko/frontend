@@ -8,10 +8,10 @@
 
           <mj-spacer height="10px" />
 
-          <mj-divider border-color="#FFF" border-width="1px"></mj-divider>
+          <mj-divider border-color="#FFF" border-width="1px" padding-left="5px" padding-right="5px"></mj-divider>
 
-          <mj-text color="#FFF" font-family="Helvetica" align="center">
-            <h1 style="font-size:48px; line-height:48px" >
+          <mj-text color="#FFF" font-family="Helvetica" align="center" padding-left="5px" padding-right="5px">
+            <h1 style="font-size:40px; line-height:40px" >
               Thank you for subscription.
             </h1>
           </mj-text>
