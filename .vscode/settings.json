@@ -1,0 +1,32 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.DS_Store": true,
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/tmp": true,
+        "**/vendor": true,
+        "**/dist": true
+    },
+    "eslint.options": {
+        "rules": {
+            "semi": [
+                2,
+                "always"
+            ],
+            "indent": [
+                2,
+                2
+            ],
+            "no-console": 0,
+            "comma-dangle": 0
+        },
+        "parserOptions": {
+            "ecmaVersion": 6,
+            "sourceType": "module"
+        },
+        "envs": ["es6", "browser", "node"],
+        "globals": ["angular", "$", "jQuery"]
+    }
+}
