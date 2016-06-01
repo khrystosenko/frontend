@@ -8,6 +8,9 @@ module.exports = function(defaults) {
     sassOptions: {
       includePaths: ['bower_components/material-design-lite/src']
     },
+    babel: {
+      includePolyfill: true
+    }
   });
 
   // Use `app.import` to add additional libraries to the generated
