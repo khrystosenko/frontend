@@ -7,7 +7,7 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
   i18n: Ember.inject.service(),
   model() {
     return Ember.RSVP.hash({
-      features: this.get('ajax').request('/features/')
+      features: this.get('ajax').request('/features//')
     });
   },
   actions: {
