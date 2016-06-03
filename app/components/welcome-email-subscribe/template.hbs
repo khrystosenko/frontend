@@ -3,7 +3,7 @@
     {{t "welcome.successfulSubscriptionMessage"}}
   </div>
   <div>
-    {{mdl-textfield label=(t "form.email.label") type="email" name="email" value=email errorMessage=(t "form.email.errorMessage")}}
+    {{mdl-textfield label=(t "form.email.label") type="email" name="email" value=email errorMessage=customErrorMessage}}
   </div>
   <div>
     {{#mdl-button isRaised=true isColored=false type="submit" disabled=isDisabled}}{{t "welcome.subscribe"}}{{/mdl-button}}
