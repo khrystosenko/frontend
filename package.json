@@ -53,6 +53,7 @@
     "ember-django-adapter": "1.1.2",
     "ember-export-application-global": "^1.0.5",
     "ember-i18n": "4.2.1",
+    "ember-i18n-cp-validations": "2.5.0",
     "ember-load-initializers": "^0.5.1",
     "ember-local-storage": "1.1.0",
     "ember-material-lite": "^0.2.2",
