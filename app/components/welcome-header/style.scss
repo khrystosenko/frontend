@@ -142,4 +142,14 @@
       }
     }
   }
+
+  @media screen and (max-height: 500px) { // hide how it works button on screens with small height
+    & {
+      .welcome-title {
+        a {
+          display: none;
+        }
+      }
+    }
+  }
 }
