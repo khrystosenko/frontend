@@ -1,6 +1,7 @@
 & {
   background: url('/assets/images/header1.png') center / cover;
   height: 100vh;
+  min-height: 100vh; // fix for full height header in iPad
   justify-content: space-between;
   position: relative;
 
