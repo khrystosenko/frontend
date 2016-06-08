@@ -25,7 +25,9 @@ module.exports = function(deployTarget) {
 
   if (deployTarget === 'development') {
     ENV.build.environment = 'development';
-    // configure other plugins for development deploy target here
+    ENV.plugins = ['build', 'gzip', 's3', 'manifest'];
+    ENV.s3.bucket = process.env.DEVELOPMENT_BUCKET;
+    ENV.s3.region = process.env.DEVELOPMENT_REGION;
   }
 
   if (deployTarget === 'staging') {
