@@ -6,6 +6,7 @@ export default {
       "learnMore": "Learn more",
     },
     "howItWorks.title": "How It Works",
+    "battle.title": "Features Battle",
     "likeTheIdea": "Like the idea? Be first to know the exact moment we launch",
     "subscribe": "Subscribe",
     "successfulSubscriptionMessage": "You subscribed successfully!",

@@ -12,92 +12,50 @@
         <img src="/assets/images/support/azubu.png" alt="Azubu" title="Azubu"/>
       </section>
 
-      <section id="benefits">
-        <h3>{{t "welcome.howItWorks.title"}}<span class="title-dot"></span></h3>
+      {{#if model.benefits.length}}
+        <section id="benefits">
+          <h3>{{t "welcome.howItWorks.title"}}<span class="title-dot"></span></h3>
 
-        <div class="benefits-items">
+          <div class="benefits-items">
 
-          {{#each model.features as |feature|}}
-            <div class="mdl-grid">
-              <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-                <div class="benefits-item__image">
-                  <img src="{{feature.image_url}}"/>
+            {{#each model.benefits as |feature|}}
+              <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
+                  <div class="benefits-item__image">
+                    <img src="{{feature.image_url}}"/>
+                  </div>
+                </div>
+                <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet">
+                  <div class="benefits-item__description">
+                    <h4>{{feature.title}}</h4>
+                    <div class="benefits-item__text">{{feature.description}}</div>
+                  </div>
                 </div>
               </div>
-              <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet">
-                <div class="benefits-item__description">
-                  <h4>{{feature.title}}</h4>
-                  <div class="benefits-item__text">{{feature.description}}</div>
-                </div>
-              </div>
-            </div>
-          {{/each}}
-          {{!--<div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-              <div class="benefits-item__image">
-                <img src="/assets/images/benefits/link.png"/>
-              </div>
-            </div>
-            <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet">
-              <div class="benefits-item__description">
-                <h4>STAY CONNECTED</h4>
-                <div class="benefits-item__text">One place - All Dota 2 streams in one place. Select best streams from twitch, hitbox, azubu and others on roomit.tv</div>
-              </div>
-            </div>
+            {{/each}}
           </div>
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-              <div class="benefits-item__image">
-                <img src="/assets/images/benefits/group.png"/>
-              </div>
-            </div>
-            <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet">
-              <div class="benefits-item__description">
-                <h4>FRIENDS ONLY</h4>
-                <div class="benefits-item__text">Simple click - Just click on the stream you like and enjoy the best moments of the game, alone or with invited friends.</div>
-              </div>
-            </div>
-          </div>
-          <div class="mdl-grid">
-            <div class="mdl-cell mdl-cell--4-col mdl-cell--8-col-tablet">
-              <div class="benefits-item__image">
-                <img src="/assets/images/benefits/spam.png"/>
-              </div>
-            </div>
-            <div class="mdl-cell mdl-cell--8-col mdl-cell--8-col-tablet">
-              <div class="benefits-item__description">
-                <h4>NO SPAM IN ROOMS</h4>
-                <div class="benefits-item__text">Your room - finally you can create personal room with especially created chat that will change the way you watch Dota 2.</div>
-              </div>
-            </div>
-          </div>--}}
-        </div>
-      </section>
+        </section>
+      {{/if}}
 
-      <section id="battle">
-        <h3>Battle<span class="title-dot"></span></h3>
+      {{#if model.battle.length}}
+        <section id="battle">
+          <h3>{{t "welcome.battle.title"}}<span class="title-dot"></span></h3>
 
-        <div class="battle-items">
-          <div class="battle-item">
-            <img src="/assets/images/battle/photo_1.jpg"/>
-            <h4>ONE PLACE <span class="title-dot"></span></h4>
-            <div class="battle-item__text">One place - All Dota 2 streams in one place. Select best streams from twitch, hitbox, azubu and others on roomit.tv</div>
+          <div class="battle-items">
+            {{#each model.battle as |feature|}}
+              <div class="battle-item">
+                <img src="{{feature.image_url}}"/>
+                <h4>{{feature.title}} <span class="title-dot"></span></h4>
+                <div class="battle-item__text">{{feature.description}}</div>
+                <i class="material-icons material-icons--check_circle">check_circle</i>
+                <i class="material-icons material-icons--radio_button_unchecked">radio_button_unchecked</i>
+              </div>
+            {{/each}}
           </div>
 
-          <div class="battle-item">
-            <img src="/assets/images/battle/photo_2.jpg"/>
-            <h4>SET UP IN ONE CLICK <span class="title-dot"></span></h4>
-            <div class="battle-item__text">Simple click - Just click on the stream you like and enjoy the best moments of the game, alone or with invited friends.</div>
-          </div>
+        </section>
+      {{/if}}
 
-          <div class="battle-item">
-            <img src="/assets/images/battle/photo_3.jpg"/>
-            <h4>GET PLEASURED <span class="title-dot"></span></h4>
-            <div class="battle-item__text">Your room - finally you can create personal room with especially created chat that will change the way you watch Dota 2.</div>
-          </div>
-        </div>
-
-      </section>
 
       <section id="subscribe">
         <h3>{{t "welcome.likeTheIdea"}}<span class="title-dot"></span></h3>

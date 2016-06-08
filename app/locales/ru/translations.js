@@ -6,6 +6,7 @@ export default {
       "learnMore": "Узнать больше",
     },
     "howItWorks.title": "Как Это Работает",
+    "battle.title": "Баттл Фич",
     "likeTheIdea": "Понравилась идея? Будь первым кто узнает точную дату запуска",
     "subscribe": "Подписаться",
     "successfulSubscriptionMessage": "Вы успешно подписались!",

@@ -6,9 +6,25 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
   subscribe: Ember.inject.service(),
   i18n: Ember.inject.service(),
   model() {
-    return Ember.RSVP.hash({
-      features: this.get('ajax').request('/features//')
-    });
+    return this.get('ajax').request('/features//')
+      .then(function (res) {
+        return res.reduce(function (items, item) {
+
+          switch (item.type) {
+          case 0: // benefits
+            items.benefits.push(item);
+            break;
+          case 1: // battle
+            items.battle.push(item);
+            break;
+          default:
+            break;
+          }
+
+          return items;
+        }, {
+          benefits: [], battle: [] });
+      });
   },
   actions: {
     subscribe(email) {
