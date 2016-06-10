@@ -41,17 +41,7 @@
         <section id="battle">
           <h3>{{t "welcome.battle.title"}}<span class="title-dot"></span></h3>
 
-          <div class="battle-items">
-            {{#each model.battle as |feature|}}
-              <div class="battle-item">
-                <img src="{{feature.image_url}}"/>
-                <h4>{{feature.title}} <span class="title-dot"></span></h4>
-                <div class="battle-item__text">{{feature.description}}</div>
-                <i class="material-icons material-icons--check_circle">check_circle</i>
-                <i class="material-icons material-icons--radio_button_unchecked">radio_button_unchecked</i>
-              </div>
-            {{/each}}
-          </div>
+          {{welcome/battle-items features=model.battle vote=(action (route-action 'vote'))}}
 
         </section>
       {{/if}}
@@ -94,3 +84,11 @@
   </main>
   <div class="mdl-layout__obfuscator"></div>
 </div>
+
+{{#if isShowingModal}}
+  {{#modal-dialog close=(action (route-action "toggleModal"))
+                  targetAttachment="center"
+                  translucentOverlay=true}}
+    Oh hai there!
+  {{/modal-dialog}}
+{{/if}}

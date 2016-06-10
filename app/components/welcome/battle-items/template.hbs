@@ -1,0 +1,3 @@
+{{#each features as |feature|}}
+  {{welcome/battle-item feature=feature isSelected=(eq feature.id votedId) isHoverable=hasNotVoted action="featureClicked"}}
+{{/each}}

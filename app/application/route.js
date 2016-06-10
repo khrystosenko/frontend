@@ -10,5 +10,14 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
     if (storedLocale) {
       this.set('i18n.locale', storedLocale);
     }
+  },
+  actions: {
+    subscribe(email) {
+      return this.get('subscribe').request(email);
+    },
+    setLocale(locale) {
+      this.set('i18n.locale', locale);
+      this.refresh();
+    }
   }
 });

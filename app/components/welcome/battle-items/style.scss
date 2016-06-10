@@ -1,0 +1,10 @@
+& {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+
+  @media screen and (max-width: $layout-screen-size-threshold) {
+    justify-content: space-around;
+  }
+}

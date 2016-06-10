@@ -30,9 +30,16 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
     subscribe(email) {
       return this.get('subscribe').request(email);
     },
-    setLocale(locale) {
-      this.set('i18n.locale', locale);
-      this.refresh();
+    vote(featureId, email) {
+      console.log(featureId, this, this.controller);
+      return Ember.RSVP.resolve()
+        .then(() => {
+          this.controller.set('votedId', featureId);
+          this.controller.set('isShowingModal', true);
+        });
+    },
+    toggleModal() {
+      this.controller.toggleProperty('isShowingModal');
     }
   }
 });
