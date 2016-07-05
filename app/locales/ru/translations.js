@@ -11,7 +11,12 @@ export default {
     "subscribe": "Подписаться",
     "successfulSubscriptionMessage": "Вы успешно подписались!",
     "toTop": "Наверх",
-    "features": "Особенности"
+    "features": "Особенности",
+    "vote": {
+      "thanksTitle": "Спасибо за Ваш голос",
+      "subscribeTitle": "Подпишитесь на рассылку",
+      "close": "Закрыть"
+    }
   },
   "language-select.language": {
     "en": "english",

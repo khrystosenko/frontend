@@ -11,7 +11,7 @@
     border-radius: 50%;
   }
 
-  &__text {
+  .battle-item__text {
     // Text style for "-- text about"
     opacity: 0.87;
     color: white;
@@ -31,6 +31,14 @@
     display: none;
   }
 
+  .battle-item__counter {
+    position: absolute;
+    left: 0px;
+    top: -28px;
+    font-size: 25px;
+    opacity: 0.5;
+  }
+
   &.is-selected {
     background: rgba(155, 89, 182, 0.5);
     filter: none;
@@ -38,6 +46,11 @@
     .material-icons--check_circle {
       opacity: 1;
       display: inline-block;
+      color: rgb(255, 87, 34);
+    }
+
+    .battle-item__counter {
+      opacity: 1;
       color: rgb(255, 87, 34);
     }
   }

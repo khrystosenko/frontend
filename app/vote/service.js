@@ -3,36 +3,17 @@ import { storageFor } from 'ember-local-storage';
 
 export default Ember.Service.extend({
   ajax: Ember.inject.service(),
-  subscribeStorage: storageFor('subscribe'),
+  voteStorage: storageFor('vote'),
+  getVoteId() {
+    return this.get('voteStorage.vote.id');
+  },
   getEmail() {
-    return this.get('subscribeStorage.email');
+    return this.get('voteStorage.vote.email');
   },
-  request(voteId, email) {
-
-    return this.get('ajax').post('/feature/vote//', { // two "//" are workaround for removing trailing slash by ember ajax
-      dataType: 'text',
-      data: {
-        email: email
-      },
-    })
-      .then(() => {
-        this.set('subscribeStorage.id', voteId);
-        if (email) {
-          this.set('subscribeStorage.email', email);
-        }
-      });
+  getData() {
+    return this.get('voteStorage.vote');
   },
-  subscribe(email) {
-    const voteId = this.get('subscribeStorage.id');
-
-    return this.get('ajax').put(`/feature/vote/${voteId}//`, { // two "//" are workaround for removing trailing slash by ember ajax
-      dataType: 'text',
-      data: {
-        email: email
-      },
-    })
-      .then(() => {
-        this.set('subscribeStorage.email', email);
-      });
+  save(data) {
+    return this.set('voteStorage.vote', data);
   }
 });

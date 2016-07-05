@@ -1,0 +1,23 @@
+<h3>
+  {{t "welcome.vote.thanksTitle"}}<span class="title-dot"></span>
+</h3>
+
+{{#unless isSubscribeHidden}}
+  <h3>
+    {{t "welcome.vote.subscribeTitle"}}<span class="title-dot"></span>
+  </h3>
+
+  <form {{action "submit" email on="submit"}} class="{{if submittedSuccessfully "submitted-successfully"}}">
+    <div class="successful-message">
+      {{t "welcome.successfulSubscriptionMessage"}}
+    </div>
+    <div>
+      {{mdl-textfield label=(t "form.email.label") type="email" name="email" value=email errorMessage=customErrorMessage}}
+    </div>
+    <div>
+      {{#mdl-button isRaised=true isColored=false type="submit" disabled=isDisabled}}{{t "welcome.subscribe"}}{{/mdl-button}}
+    </div>
+  </form>
+{{else}}
+  {{#mdl-button isRaised=true isColored=false type="submit" click=closeModal}}{{t "welcome.vote.close"}}{{/mdl-button}}
+{{/unless}}

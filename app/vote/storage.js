@@ -4,7 +4,7 @@ const Storage = StorageObject.extend();
 
 Storage.reopenClass({
   initialState() {
-    return { id: null, email: '' };
+    return { vote: { id: null, email: '' }};
   }
 });
 

@@ -4,6 +4,7 @@ import UnauthenticatedRouteMixin from 'ember-simple-auth/mixins/unauthenticated-
 export default Ember.Route.extend(UnauthenticatedRouteMixin, {
   ajax: Ember.inject.service(),
   subscribe: Ember.inject.service(),
+  vote: Ember.inject.service(),
   i18n: Ember.inject.service(),
   model() {
     return this.get('ajax').request('/features//')
@@ -24,6 +25,15 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
           return items;
         }, {
           benefits: [], battle: [] });
+      })
+      .then((model) => {
+        const storedVote = this.get('vote').getData() || null;
+
+        model.vote = storedVote && storedVote.id ?
+          this.store.push(this.store.normalize('vote', storedVote)) :
+          null;
+
+        return model;
       });
   },
   actions: {
@@ -31,11 +41,25 @@ export default Ember.Route.extend(UnauthenticatedRouteMixin, {
       return this.get('subscribe').request(email);
     },
     vote(featureId, email) {
-      console.log(featureId, this, this.controller);
-      return Ember.RSVP.resolve()
+      const voteRecord = this.store.createRecord('vote', {
+        feature: featureId,
+        email: email || this.get('subscribe').getEmail() || undefined
+      });
+
+      return voteRecord.save()
         .then(() => {
-          this.controller.set('votedId', featureId);
-          this.controller.set('isShowingModal', true);
+          this.set('model.vote', voteRecord);
+          this.get('vote').save(voteRecord.serialize({ includeId: true }));
+          this.controller.toggleProperty('isShowingModal');
+        });
+    },
+    voteSubscribe(email) {
+      const voteModel = this.get('model.vote');
+      voteModel.set('email', email);
+
+      return voteModel.save()
+        .then(() => {
+          this.get('vote').save(voteModel.serialize({ includeId: true }));
         });
     },
     toggleModal() {

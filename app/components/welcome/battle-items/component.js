@@ -2,18 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   features: [],
-  votedId: null,
-  hasNotVoted: Ember.computed('votedId', function () {
-    return !this.get('votedId');
+  votedFeatureId: null,
+  hasNotVoted: Ember.computed('votedFeatureId', function () {
+    return !this.get('votedFeatureId');
   }),
   isShowingModal: false,
   actions: {
     featureClicked(id) {
-      console.log('zzzz', id);
       this.get('vote')(id)
         .then(() => {
-          this.set('votedId', id);
-          // this.toggleProperty('isShowingModal');
+          this.set('votedFeatureId', id);
         });
     },
     toggleModal: function() {

@@ -41,7 +41,7 @@
         <section id="battle">
           <h3>{{t "welcome.battle.title"}}<span class="title-dot"></span></h3>
 
-          {{welcome/battle-items features=model.battle vote=(action (route-action 'vote'))}}
+          {{welcome/battle-items features=model.battle votedFeatureId=model.vote.feature vote=(action (route-action 'vote'))}}
 
         </section>
       {{/if}}
@@ -86,9 +86,7 @@
 </div>
 
 {{#if isShowingModal}}
-  {{#modal-dialog close=(action (route-action "toggleModal"))
-                  targetAttachment="center"
-                  translucentOverlay=true}}
-    Oh hai there!
+  {{#modal-dialog close=(action (route-action "toggleModal")) translucentOverlay=true}}
+    {{welcome/vote-modal voteRecord=model.vote closeModal=(action (route-action "toggleModal")) subscribe=(action (route-action "voteSubscribe"))}}
   {{/modal-dialog}}
 {{/if}}

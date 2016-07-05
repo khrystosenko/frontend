@@ -11,7 +11,12 @@ export default {
     "subscribe": "Subscribe",
     "successfulSubscriptionMessage": "You subscribed successfully!",
     "toTop": "To Top",
-    "features": "Features"
+    "features": "Features",
+    "vote": {
+      "thanksTitle": "Thank You for voting",
+      "subscribeTitle": "Subscribe to our newsletter",
+      "close": "Close"
+    }
   },
   "language-select.language": {
     "en": "english",
